@@ -1,21 +1,70 @@
 @import "tailwindcss";
 
 :root {
+  /* Base */
   --background: #ededed;
   --foreground: #0a0a0a;
+
+  /* Brand colors */
+  --brand-primary: #2ad2bc;
+  --brand-secondary: #098272;
+
+  /* UI colors */
+  --brand-accept-primary: #2ad28c;
+  --brand-accept-secondary: #066c41;
+  --brand-warning-primary: #fc4774;
+  --brand-warning-secondary: #fc4774;
+  --brand-action-primary: #036ca6;
+  --brand-action-secondary: #043a59;
+
+  /* UI gray colors */
+  --brand-grey-100: oklch(96.62% 0.003 247.86);
+  --brand-grey-300: oklch(92.55% 0.005 228.82);
+  --brand-grey-500: oklch(75.62% 0.004 247.87);
+  --brand-grey-700: oklch(34.48% 0.027 255.11);
+  --brand-grey-900: oklch(17.43% 0.01 276.35);
 }
 
 @theme inline {
+  /* Base */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Brand colors */
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+
+  /* UI colors */
+  --color-brand-accept-primary: var(--brand-accept-primary);
+  --color-brand-accept-secondary: var(--brand-accept-secondary);
+  --color-brand-warning-primary: var(--brand-warning-primary);
+  --color-brand-warning-secondary: var(--brand-warning-secondary);
+  --color-brand-action-primary: var(--brand-action-primary);
+  --color-brand-action-secondary: var(--brand-action-secondary);
+
+  /* UI gray colors */
+  --color-brand-grey-100: var(--brand-grey-100);
+  --color-brand-grey-300: var(--brand-grey-300);
+  --color-brand-grey-500: var(--brand-grey-500);
+  --color-brand-grey-700: var(--brand-grey-700);
+  --color-brand-grey-900: var(--brand-grey-900);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+
+    /* swap any colors for dark mode here, e.g: */
+    /* --brand-primary: #1a9e8c; */
+  }
+}
+
+@layer utilities {
+  .page-container {
+    @apply pt-20 px-4 lg:pt-24 lg:px-24;
   }
 }
 
