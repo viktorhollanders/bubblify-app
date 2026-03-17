@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -14,15 +14,22 @@ export function NavBar() {
   const { matches: isDesktop } = useMediaQuery("min-width: 768px");
   const pathname = usePathname();
 
+  useEffect(() => {
+    setTimeout(() => setIsMenuOpen(false), 0);
+  }, [pathname]);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  console.log(isDesktop);
+
   return (
     <div className="fixed px-6 lg:px-24 lg:py-5 py-3 bg-brand-grey-100 z-50 w-full md:flex md:flex-row md:justify-between">
       <div className="flex items-center justify-between">
         <Logo />
-        <button
-          className="flex md:hidden"
-          onClick={() => setIsMenuOpen((prev) => !prev)}
-        >
-          {isMenuOpen === false ? (
+        <button className="flex md:hidden" onClick={toggleMenu}>
+          {!isMenuOpen ? (
             <Menu className="text-brand-primary" size={24} />
           ) : (
             <X className="text-brand-primary" size={24} />
