@@ -1,6 +1,8 @@
 import { Product } from "@/types";
 import Image from "next/image";
 
+import { AddToCartButton } from "@/components/add-to-cart-button";
+
 export default async function BubblesDetails({
   params,
 }: {
@@ -19,8 +21,8 @@ export default async function BubblesDetails({
   const product = (await response.json()) as Product;
 
   return (
-    <div className="page-container">
-      <div>
+    <div className="page-container flex justify-center">
+      <div className=" max-w-65 border-brand-grey-300 border-2 rounded-2xl p-6 flex flex-col gap-6">
         <Image
           src={product.image}
           width={200}
@@ -28,9 +30,15 @@ export default async function BubblesDetails({
           alt={product.name}
         />
 
-        <h1>{product.name}</h1>
-        <h4>{product.description}</h4>
-        <h3>{product.price}.ISK</h3>
+        <div className="flex flex-col gap-4">
+          <h1 className="text-2xl font-bold">{product.name}</h1>
+          <h4>{product.description}</h4>
+          <h3 className="font-semibold">{product.price}.ISK</h3>
+        </div>
+
+        <div className="lg:p-4">
+          <AddToCartButton />
+        </div>
       </div>
     </div>
   );
