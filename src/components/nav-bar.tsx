@@ -23,7 +23,7 @@ export function NavBar() {
   };
 
   return (
-    <div className="fixed px-6 lg:px-24 lg:py-5 py-3 bg-brand-grey-100 z-50 w-full md:flex md:flex-row md:justify-between">
+    <div className="fixed px-6 lg:px-24 lg:py-5 py-3 bg-brand-grey-100 border-b-2 border-brand-grey-300 z-50 w-full md:flex md:flex-row md:justify-between">
       <div className="flex items-center justify-between">
         <Link href="/bubbles">
           <Logo />

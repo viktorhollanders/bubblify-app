@@ -17,9 +17,9 @@ export default async function Bubbles() {
   return (
     <div className="page-container">
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-        {data.map((p) => (
-          <Link key={p.id} href={`bubbles/${p.id}`}>
-            <ProductCard key={p.id} product={p} />
+        {data.map((product) => (
+          <Link key={product.id} href={`bubbles/${product.id}`}>
+            <ProductCard key={product.id} product={product} />
           </Link>
         ))}
       </div>

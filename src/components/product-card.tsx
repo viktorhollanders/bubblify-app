@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export function ProductCard({ product }: { product: Product }) {
   return (
-    <div className="max-w-3xs p-6 rounded-2xl bg-brand-grey-100 flex flex-col items-center">
+    <div className="max-w-3xs h-full p-6 rounded-2xl bg-brand-grey-100 flex flex-col items-center justify-between border-brand-grey-300 border-2">
       <Image
         src={product.image}
         alt={product.name}

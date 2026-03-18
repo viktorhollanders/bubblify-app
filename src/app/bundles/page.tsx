@@ -1,3 +1,4 @@
+import { BundleCard } from "@/components/bundle-card";
 import { Bundle, Product, BundleWithProducts, BundleProduct } from "@/types";
 
 export default async function Bundles() {
@@ -45,11 +46,13 @@ export default async function Bundles() {
     };
   });
 
-  console.log(bundles);
-
   return (
     <div className="page-container">
-      <h1>bunddle</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {bundles.map((bundle: BundleWithProducts) => {
+          return <BundleCard key={bundle.id} bundle={bundle} />;
+        })}
+      </div>
     </div>
   );
 }

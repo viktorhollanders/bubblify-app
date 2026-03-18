@@ -1,10 +1,6 @@
 @import "tailwindcss";
 
 :root {
-  /* Base */
-  --background: #ededed;
-  --foreground: #0a0a0a;
-
   /* Brand colors */
   --brand-primary: #2ad2bc;
   --brand-secondary: #098272;
@@ -23,6 +19,10 @@
   --brand-grey-500: oklch(75.62% 0.004 247.87);
   --brand-grey-700: oklch(34.48% 0.027 255.11);
   --brand-grey-900: oklch(17.43% 0.01 276.35);
+
+  /* Base */
+  --background: var(--brand-grey-100);
+  --foreground: #0a0a0a;
 }
 
 @theme inline {
