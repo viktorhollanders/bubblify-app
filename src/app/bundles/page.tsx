@@ -1,6 +1,4 @@
-import Link from "next/link";
-
-import { Bundle, Product } from "@/types";
+import { Bundle, Product, BundleWithProducts, BundleProduct } from "@/types";
 
 export default async function Bundles() {
   const baseUrl = "http://localhost:3500/api";
@@ -16,10 +14,37 @@ export default async function Bundles() {
     throw new Error("Could not load data from bubbles or bundles");
   }
 
-  const bubbles = (await respBubbles.json()) as Product[];
-  const bundles = (await respBundles.json()) as Bundle;
+  const productData = (await respBubbles.json()) as Product[];
+  const bundlesData = (await respBundles.json()) as Bundle[];
 
-  console.log(bubbles);
+  const bundles: BundleWithProducts[] = bundlesData.map((bundle) => {
+    const filteredProducts: Product[] = productData.filter((product) => {
+      return bundle.items.includes(product.id);
+    });
+
+    const products: BundleProduct[] = filteredProducts.map((product) => {
+      return {
+        id: product.id,
+        name: product.name,
+        image: product.image,
+      };
+    });
+
+    const bundlePrice: number = filteredProducts.reduce(
+      (acc, curr: Product) => {
+        return acc + curr.price;
+      },
+      0,
+    );
+
+    return {
+      id: bundle.id,
+      name: bundle.name,
+      products,
+      bundlePrice,
+    };
+  });
+
   console.log(bundles);
 
   return (

@@ -39,26 +39,30 @@ export function NavBar() {
       {(isMenuOpen || isDesktop) && (
         <nav className="flex flex-col items-center gap-6 h-dvh mt-10 md:h-auto md:flex-row md:mt-0">
           <Link
-            className={`${pathname === "/bubbles" ? "md:font-bold" : "md:font-light"} font-bold md:hover:text-brand-primary md:hover:font-bold`}
+            className={`${pathname === "/bubbles" ? "md:font-bold" : "md:font-light"} font-bold md:hover:text-brand-primary md:hover:font-bold md:after:content-[attr(data-text)] md:after:font-bold md:after:invisible after:block md:after:h-0 after:overflow-hidden`}
             href="/bubbles"
+            data-text="Products"
           >
             Products
           </Link>
           <Link
-            className={`${pathname === "/bundles" ? "md:font-bold" : "md:font-normal"} font-bold md:hover:text-brand-primary md:hover:font-bold`}
+            className={`${pathname === "/bundles" ? "md:font-bold" : "md:font-normal"} font-bold md:hover:text-brand-primary md:hover:font-bold md:after:content-[attr(data-text)] md:after:font-bold md:after:invisible after:block md:after:h-0 after:overflow-hidden`}
             href="/bundles"
+            data-text="Bundles"
           >
             Bundles
           </Link>
           <Link
-            className={`${pathname === "/about" ? "md:font-bold" : "md:font-normal"} font-bold md:hover:text-brand-primary md:hover:font-bold`}
+            className={`${pathname === "/about" ? "md:font-bold" : "md:font-normal"} font-bold md:hover:text-brand-primary md:hover:font-bold md:after:content-[attr(data-text)] md:after:font-bold md:after:invisible after:block md:after:h-0 after:overflow-hidden`}
             href="/about"
+            data-text="About Us"
           >
             About Us
           </Link>
           <Link
-            className={`${pathname === "/cart" ? "md:font-bold" : "md:font-normal"} font-bold md:hover:text-brand-primary md:hover:font-bold`}
+            className={`${pathname === "/cart" ? "md:font-bold" : "md:font-normal"} font-bold md:hover:text-brand-primary md:hover:font-bold md:after:content-[attr(data-text)] md:after:font-bold md:after:invisible after:block md:after:h-0 after:overflow-hidden`}
             href="/cart"
+            data-text="Cart"
           >
             Cart
           </Link>
