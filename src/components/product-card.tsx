@@ -17,7 +17,7 @@ export function ProductCard({ product }: { product: Product }) {
         <h3 className="text-brand-primary font-bold capitalize">
           {product.name}
         </h3>
-        <h4 className="font-bold">{product.price} ISK</h4>
+        <h4 className="font-bold">{product.price}.ISK</h4>
       </div>
     </div>
   );

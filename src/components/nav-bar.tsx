@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 
 import { Menu, X } from "lucide-react";
 
-import { Logo } from "./logo";
+import { Logo } from "./ui/logo";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 export function NavBar() {
@@ -22,12 +22,12 @@ export function NavBar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  console.log(isDesktop);
-
   return (
     <div className="fixed px-6 lg:px-24 lg:py-5 py-3 bg-brand-grey-100 z-50 w-full md:flex md:flex-row md:justify-between">
       <div className="flex items-center justify-between">
-        <Logo />
+        <Link href="/bubbles">
+          <Logo />
+        </Link>
         <button className="flex md:hidden" onClick={toggleMenu}>
           {!isMenuOpen ? (
             <Menu className="text-brand-primary" size={24} />
@@ -54,7 +54,13 @@ export function NavBar() {
             className={`${pathname === "/about" ? "md:font-bold" : "md:font-normal"} font-bold md:hover:text-brand-primary md:hover:font-bold`}
             href="/about"
           >
-            About
+            About Us
+          </Link>
+          <Link
+            className={`${pathname === "/cart" ? "md:font-bold" : "md:font-normal"} font-bold md:hover:text-brand-primary md:hover:font-bold`}
+            href="/cart"
+          >
+            Cart
           </Link>
         </nav>
       )}
