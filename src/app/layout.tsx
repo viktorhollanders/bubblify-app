@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
 import { NavBar } from "@/components/nav-bar";
+import { CartProvider } from "@/contexts/cart-context";
 
 const nunito = Nunito({
   fallback: ["system-ui", "arial", "sans-serif"],
@@ -22,8 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${nunito.className} antialiased`}>
-        <NavBar />
-        {children}
+        <CartProvider>
+          <NavBar />
+          {children}
+        </CartProvider>
       </body>
     </html>
   );

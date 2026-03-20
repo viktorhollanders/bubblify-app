@@ -8,5 +8,5 @@ export interface BundleWithProducts {
   id: number;
   name: string;
   products: BundleProduct[];
-  bundlePrice: number;
+  price: number;
 }

@@ -31,18 +31,15 @@ export default async function Bundles() {
       };
     });
 
-    const bundlePrice: number = filteredProducts.reduce(
-      (acc, curr: Product) => {
-        return acc + curr.price;
-      },
-      0,
-    );
+    const price: number = filteredProducts.reduce((acc, curr: Product) => {
+      return acc + curr.price;
+    }, 0);
 
     return {
       id: bundle.id,
       name: bundle.name,
       products,
-      bundlePrice,
+      price,
     };
   });
 

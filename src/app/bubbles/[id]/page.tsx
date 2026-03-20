@@ -1,7 +1,7 @@
 import { Product } from "@/types";
 import Image from "next/image";
 
-import { AddToCartButton } from "@/components/add-to-cart-button";
+import { AddToCartButton } from "@/components/add-to-cart-btn";
 
 export default async function BubblesDetails({
   params,
@@ -37,7 +37,7 @@ export default async function BubblesDetails({
         </div>
 
         <div className="lg:p-4">
-          <AddToCartButton />
+          <AddToCartButton item={product} />
         </div>
       </div>
     </div>

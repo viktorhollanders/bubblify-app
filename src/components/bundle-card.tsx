@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { BundleWithProducts, BundleProduct } from "@/types";
-import { AddToCartButton } from "./add-to-cart-button";
+import { AddToCartButton } from "./add-to-cart-btn";
 
 export function BundleCard({ bundle }: { bundle: BundleWithProducts }) {
   return (
@@ -28,7 +28,7 @@ export function BundleCard({ bundle }: { bundle: BundleWithProducts }) {
         })}
       </div>
       <div className="flex justify-center p-6">
-        <AddToCartButton />
+        <AddToCartButton item={bundle} />
       </div>
     </div>
   );
