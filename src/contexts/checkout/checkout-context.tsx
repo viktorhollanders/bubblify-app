@@ -4,7 +4,7 @@ import { StorePickup, Delivery, CheckoutStep } from "@/types";
 
 interface CheckoutContextType {
   fulfillment: StorePickup | Delivery | null;
-  fulfillmentType: "pickup" | "delivery" | null;
+  fulfillmentType: "pickup" | "delivery";
   chooseFulfillmentMethod: (type: "pickup" | "delivery") => void;
   setFulfillmentDetails: (method: StorePickup | Delivery) => void;
   addStep: (step: CheckoutStep) => void;
@@ -18,13 +18,13 @@ export function CheckoutProvider({ children }: { children: React.ReactNode }) {
   const [fulfillment, setFulfillment] = useState<StorePickup | Delivery | null>(
     null,
   );
-  const [fulfillmentType, setFulfillmentType] = useState<
-    "pickup" | "delivery" | null
-  >(null);
+  const [fulfillmentType, setFulfillmentType] = useState<"pickup" | "delivery">(
+    "pickup",
+  );
 
   const [completedSteps, setCompletedSteps] = useState<CheckoutStep[]>([]);
 
-  const chooseFulfillmentMethod = (type: "pickup" | "delivery") => {
+  const chooseFulfillmentMethod = (type: "pickup" | "delivery" = "pickup") => {
     setFulfillmentType(type);
   };
 

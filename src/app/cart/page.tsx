@@ -3,6 +3,7 @@ import { useCartContext } from "@/contexts/cart/use-cart-context";
 import { CartItemCard } from "@/components/cart-item-card";
 import { Button } from "@/components/ui/button";
 import { QuantityIndicator } from "@/components/quantity-indicator";
+import Link from "next/link";
 
 export default function Cart() {
   const { cartItems, cartQuantity, cartTotal } = useCartContext();
@@ -34,9 +35,11 @@ export default function Cart() {
           </div>
         ) : (
           <div className="flex justify-between  items-center">
-            <Button variant="primary" size="md">
-              Proceed to checkout
-            </Button>
+            <Link href="/checkout">
+              <Button variant="primary" size="md">
+                Proceed to checkout
+              </Button>
+            </Link>
             <span className="font-bold">{cartTotal} KR.</span>
           </div>
         )}
