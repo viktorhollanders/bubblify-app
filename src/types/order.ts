@@ -4,7 +4,7 @@ import { Delivery, StorePickup } from "./fulfillment";
 export interface Order {
   id: number;
   items: CartItem[];
-  fulfillment: StorePickup | Delivery;
+  fulfillmentMethod: StorePickup | Delivery;
   orderTotal: number;
   orderQuantity: number;
 }

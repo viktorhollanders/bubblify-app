@@ -2,7 +2,7 @@
 import { useCartContext } from "@/contexts/cart/use-cart-context";
 import { CartItemCard } from "@/components/cart-item-card";
 import { Button } from "@/components/ui/button";
-import { QuantityIndicator } from "@/components/quantity-indicator";
+import { CartIndicator } from "@/components/cart-indicator";
 import Link from "next/link";
 
 export default function Cart() {
@@ -15,7 +15,7 @@ export default function Cart() {
         ) : (
           <div className="flex flex-row items-baseline gap-3">
             <h1 className="text-center font-bold text-2xl">Your cart</h1>
-            <QuantityIndicator />
+            <CartIndicator />
           </div>
         )}
       </div>

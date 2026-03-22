@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { QuantityIndicator } from "@/components/quantity-indicator";
+import { CartIndicator } from "@/components/cart-indicator";
 
 import { Menu, X } from "lucide-react";
 
@@ -70,7 +70,7 @@ export function NavBar() {
             >
               Cart
             </p>
-            {isDesktop && <QuantityIndicator />}
+            {isDesktop && <CartIndicator />}
           </Link>
         </nav>
       )}

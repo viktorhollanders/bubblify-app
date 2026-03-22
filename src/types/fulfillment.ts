@@ -5,8 +5,8 @@ export interface StorePickup {
 
 export interface Delivery {
   name: string;
+  telephone: string;
   address: string;
   city: string;
-  telephone: string;
   postalCode: string;
 }

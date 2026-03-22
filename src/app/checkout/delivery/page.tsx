@@ -8,7 +8,9 @@ export default function Delivery() {
   const { chooseFulfillmentMethod, addStep } = useCheckoutContext();
   return (
     <div className="page-container">
-      <h1 className="text-center font-bold text-2xl md:text-4xl">Delivery</h1>
+      <h1 className="text-center font-bold text-2xl md:text-4xl mb-6">
+        Delivery
+      </h1>
 
       <div className="flex flex-col items-center mt-12 gap-y-6">
         <h4 className="font-medium">Chose fulfillment method</h4>

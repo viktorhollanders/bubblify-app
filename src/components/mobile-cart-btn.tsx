@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { QuantityIndicator } from "./quantity-indicator";
+import { CartIndicator } from "./cart-indicator";
 import { Button } from "./ui/button";
 import { usePathname } from "next/navigation";
 
@@ -16,7 +16,7 @@ export function MobileCartIndicator() {
           variant="ghost"
           size="round"
         >
-          <QuantityIndicator />
+          <CartIndicator />
         </Button>
       </Link>
     </div>
