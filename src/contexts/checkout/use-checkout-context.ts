@@ -1,9 +1,11 @@
 import { useContext } from "react";
-import { CheckoutContext } from "../checout-context";
+import { CheckoutContext } from "./checkout-context";
 
 export function useCheckoutContext() {
   const context = useContext(CheckoutContext);
   if (!context)
-    throw new Error("useCartContext must be used within a CartProvider");
+    throw new Error(
+      "useCheckoutContext must be used within a CheckoutProvider",
+    );
   return context;
 }

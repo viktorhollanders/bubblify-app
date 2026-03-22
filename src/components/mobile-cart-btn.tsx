@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 export function MobileCartIndicator() {
   const pathname = usePathname();
 
-  return pathname === "/cart" ? null : (
+  return pathname === "/cart" || pathname === "/checkout" ? null : (
     <div className="fixed bottom-0 md:hidden z-10 w-full flex justify-end p-4">
       <Link href="/cart">
         <Button

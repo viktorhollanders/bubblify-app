@@ -1,6 +1,6 @@
 "use client";
 
-import { useCartContext } from "@/contexts/hooks/use-cart-context";
+import { useCartContext } from "@/contexts/cart/use-cart-context";
 import { Button } from "./ui/button";
 import { BundleWithProducts, Product } from "@/types";
 

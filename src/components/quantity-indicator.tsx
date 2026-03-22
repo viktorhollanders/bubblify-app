@@ -1,6 +1,6 @@
 "use client";
 import { ShoppingBasket } from "lucide-react";
-import { useCartContext } from "@/contexts/hooks/use-cart-context";
+import { useCartContext } from "@/contexts/cart/use-cart-context";
 
 export function QuantityIndicator() {
   const { cartQuantity } = useCartContext();

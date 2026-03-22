@@ -1,7 +1,7 @@
 "use client";
 import { createContext, useCallback, useMemo } from "react";
 import { Product, BundleWithProducts, CartItem } from "@/types";
-import { useLocalStorage } from "./hooks/use-local-storage";
+import { useLocalStorage } from "../../hooks/use-local-storage";
 
 interface CartContextType {
   cartItems: CartItem[];

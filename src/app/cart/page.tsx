@@ -1,5 +1,5 @@
 "use client";
-import { useCartContext } from "@/contexts/hooks/use-cart-context";
+import { useCartContext } from "@/contexts/cart/use-cart-context";
 import { CartItemCard } from "@/components/cart-item-card";
 import { Button } from "@/components/ui/button";
 import { QuantityIndicator } from "@/components/quantity-indicator";

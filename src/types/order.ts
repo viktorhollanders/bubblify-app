@@ -3,8 +3,10 @@ import { Delivery, StorePickup } from "./fulfillment";
 
 export interface Order {
   id: number;
-  items: CartItem;
+  items: CartItem[];
   fulfillment: StorePickup | Delivery;
+  orderTotal: number;
+  orderQuantity: number;
 }
 
-// export interface CreateOrderInput {}
+export type CreateOrder = Omit<Order, "id">;

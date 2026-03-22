@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
 import { NavBar } from "@/components/nav-bar";
-import { CartProvider } from "@/contexts/cart-context";
+import { CartProvider } from "@/contexts/cart/cart-context";
 import { MobileCartIndicator } from "@/components/mobile-cart-btn";
 
 const nunito = Nunito({

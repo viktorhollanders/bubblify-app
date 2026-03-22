@@ -1,7 +1,7 @@
 "use client";
 import { Plus, Minus, Trash } from "lucide-react";
 import { CartItem } from "@/types";
-import { useCartContext } from "@/contexts/hooks/use-cart-context";
+import { useCartContext } from "@/contexts/cart/use-cart-context";
 import { Button } from "./ui/button";
 
 export function CartItemCard({ item }: { item: CartItem }) {
