@@ -16,7 +16,11 @@ export function PickupForm() {
   } = useForm<StorePickup>();
 
   const onSubmit: SubmitHandler<StorePickup> = (data) => {
-    setFulfillmentDetails(data);
+    const sanitizedData = {
+      ...data,
+      telephone: data.telephone.trim().replace(/\s+/g, ""),
+    };
+    setFulfillmentDetails(sanitizedData);
     addStep("delivery");
     router.push("/checkout/review");
   };

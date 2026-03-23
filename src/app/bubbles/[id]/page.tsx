@@ -31,9 +31,9 @@ export default async function BubblesDetails({
         />
 
         <div className="flex flex-col gap-4">
-          <h1 className="text-2xl font-bold">{product.name}</h1>
+          <h1 className="text-2xl font-light">{product.name}</h1>
           <h4>{product.description}</h4>
-          <h3 className="font-semibold">{product.price} KR.</h3>
+          <h3 className="font-bold">{product.price} KR.</h3>
         </div>
 
         <div className="lg:p-4">

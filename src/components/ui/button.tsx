@@ -12,17 +12,18 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: "sm" | "md" | "lg" | "round" | "icon";
 }
 
-const button = cva("rounded cursor-pointer transition", {
+const button = cva("rounded-full cursor-pointer transition", {
   variants: {
     variant: {
-      primary: "bg-brand-primary hover:bg-brand-secondary text-white",
+      primary:
+        "bg-brand-primary hover:bg-brand-secondary text-brand-gray-900 font-bold",
       secondary: "bg-gray-200",
       accept:
         "bg-brand-accept-primary hover:bg-brand-accept-secondary text-white",
       warn: "bg-brand-warn-primary hover:bg-brand-warn-secondary text-white",
       action:
         "bg-brand-action-primary hover:bg-brand-action-secondary text-white",
-      inactive: "bg-brand-grey-500 text-white",
+      inactive: "bg-brand-grey-500 text-brand-gray-900 font-bold",
       ghost: "bg-transparent",
     },
     size: {

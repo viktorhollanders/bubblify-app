@@ -8,6 +8,7 @@ interface CartContextType {
   addCartItem: (item: Product | BundleWithProducts) => void;
   removeCartItem: (item: Product | BundleWithProducts) => void;
   deleteCartItem: (item: Product | BundleWithProducts) => void;
+  clearCart: () => void;
   cartTotal: number;
   cartQuantity: number;
   hasHydrated: boolean;
@@ -83,6 +84,11 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     [setCartItems],
   );
 
+  const clearCart = useCallback(() => {
+    setCartItems([]);
+    localStorage.removeItem("cartItems");
+  }, [setCartItems]);
+
   return (
     <CartContext
       value={{
@@ -92,6 +98,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         deleteCartItem,
         cartQuantity,
         cartTotal,
+        clearCart,
         hasHydrated,
       }}
     >

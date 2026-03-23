@@ -2,20 +2,17 @@
 
 :root {
   /* Brand colors */
-  --brand-primary: #2ad2bc;
-  --brand-secondary: #098272;
+  --brand-primary: oklch(0.7782 0.1328 181.27);
+  --brand-secondary: oklch(0.5444 0.097 179.98);
 
   /* UI colors */
-  --brand-accept-primary: #2ad28c;
-  --brand-accept-secondary: #066c41;
-  --brand-warning-primary: #fc4774;
-  --brand-warning-secondary: #fc4774;
-  --brand-action-primary: #036ca6;
-  --brand-action-secondary: #043a59;
+  --brand-accept-primary: oklch(0.7659 0.1658 159.27);
+  --brand-warning-primary: oklch(0.6697 0.2167 10.88);
+  --brand-action-primary: oklch(0.5104 0.1224 243);
 
   /* UI gray colors */
   --brand-grey-100: oklch(96.62% 0.003 247.86);
-  --brand-grey-300: oklch(92.55% 0.005 228.82);
+  --brand-grey-300: oklch(0.803 0.0114 234.86);
   --brand-grey-500: oklch(75.62% 0.004 247.87);
   --brand-grey-700: oklch(34.48% 0.027 255.11);
   --brand-grey-900: oklch(17.43% 0.01 276.35);
@@ -63,7 +60,7 @@
 }
 
 @utility page-container {
-  @apply py-24 px-4 lg:py-31 lg:px-24 max-w-[830px] m-auto;
+  @apply py-24 px-4 md:px-24 max-w-[1000px] m-auto;
 }
 
 body {

@@ -13,9 +13,9 @@ export function AddToCartButton({
 
   return (
     <Button
-      className="font-bold w-full"
+      className="font-bold"
       variant="primary"
-      size="lg"
+      size="md"
       onClick={() => addCartItem(item)}
     >
       Add to cart

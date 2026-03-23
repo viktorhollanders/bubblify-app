@@ -2,12 +2,35 @@
 import { useCheckoutContext } from "@/contexts/checkout/use-checkout-context";
 import { useCartContext } from "@/contexts/cart/use-cart-context";
 import { DeliveryAddress } from "@/components/delivery-address";
-import { Delivery } from "@/types";
+import { Order, Delivery } from "@/types";
 import { Button } from "@/components/ui/button";
+import { createOrder } from "@/actions/create-order";
+import { useState, useTransition } from "react";
 
 export default function Review() {
   const { fulfillment, fulfillmentType } = useCheckoutContext();
-  const { cartItems, cartQuantity, cartTotal } = useCartContext();
+  const { cartItems, cartTotal, cartQuantity } = useCartContext();
+  const [error, setError] = useState(false);
+
+  const [isPending, startTransition] = useTransition();
+
+  function handleCreateOrder() {
+    if (fulfillment === null) return;
+    const orderData: Order = {
+      items: cartItems,
+      fulfillmentMethod: fulfillment,
+      orderTotal: cartTotal,
+      orderQuantity: cartQuantity,
+    };
+
+    startTransition(async () => {
+      try {
+        await createOrder(orderData);
+      } catch {
+        setError(true);
+      }
+    });
+  }
 
   return (
     <div className="page-container">
@@ -61,8 +84,16 @@ export default function Review() {
           <h3 className="font-bold">{cartQuantity}</h3>
         </div>
 
-        <Button variant="accept" size="md" onClick={() => {}}>
-          Confirm order
+        {error && (
+          <p aria-live="polite">Failed to create order, please try again.</p>
+        )}
+        <Button
+          variant={isPending ? "inactive" : "accept"}
+          size="md"
+          disabled={isPending}
+          onClick={handleCreateOrder}
+        >
+          {isPending ? "Creating order" : " Confirm order"}
         </Button>
       </div>
     </div>

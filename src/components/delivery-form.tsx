@@ -16,7 +16,11 @@ export function DeliveryForm() {
   } = useForm<Delivery>();
 
   const onSubmit: SubmitHandler<Delivery> = (data) => {
-    setFulfillmentDetails(data);
+    const sanitizedData = {
+      ...data,
+      telephone: data.telephone.trim().replace(/\s+/g, ""),
+    };
+    setFulfillmentDetails(sanitizedData);
     addStep("delivery");
     router.push("/checkout/review");
   };

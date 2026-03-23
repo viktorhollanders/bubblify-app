@@ -62,6 +62,17 @@ export function NavBar() {
           </Link>
           <Link
             className="flex flex-row items-center gap-2.5"
+            href="/orders"
+            data-text="Orders"
+          >
+            <p
+              className={`${pathname === "/orders" ? "font-bold" : "font-normal"} md:hover:text-brand-primary md:hover:font-bold md:after:content-[attr(data-text)] md:after:font-bold md:after:invisible after:block md:after:h-0 after:overflow-hidden`}
+            >
+              Orders
+            </p>
+          </Link>
+          <Link
+            className="flex flex-row items-center gap-2.5"
             href="/cart"
             data-text="Cart"
           >

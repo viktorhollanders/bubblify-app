@@ -20,13 +20,13 @@ export default function Cart() {
         )}
       </div>
 
-      <div className="pt-4 flex flex-col gap-y-4">
+      <div className="pt-4 flex flex-col items-center gap-y-4 max-w-[600px] m-auto">
         {cartItems.map((item) => (
           <CartItemCard key={item.product.id} item={item} />
         ))}
       </div>
 
-      <div className="fixed bottom-0 z-10 left-0 right-0 max-w-150 m-auto py-4 px-6 bg-white rounded-full border border-brand-grey-300">
+      <div className="fixed bottom-0 z-10 left-0 right-0 max-w-150 m-auto py-4 px-6 rounded-full border border-brand-grey-300 flex justify-between items-center">
         {cartTotal === 0 ? (
           <div className="flex justify-start items-center">
             <Button variant="inactive" size="md">
@@ -34,15 +34,15 @@ export default function Cart() {
             </Button>
           </div>
         ) : (
-          <div className="flex justify-between  items-center">
+          <div className="flex justify-between items-center">
             <Link href="/checkout">
               <Button variant="primary" size="md">
                 Proceed to checkout
               </Button>
             </Link>
-            <span className="font-bold">{cartTotal} KR.</span>
           </div>
         )}
+        <span className="font-bold">{cartTotal} KR.</span>
       </div>
     </div>
   );
