@@ -18,7 +18,7 @@ export default function Success() {
       </h1>
 
       <Link href="/orders">
-        <Button variant="primary" size="md">
+        <Button variant="action" size="md">
           Look up order
         </Button>
       </Link>

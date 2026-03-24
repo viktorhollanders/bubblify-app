@@ -19,10 +19,10 @@ const button = cva("rounded-full cursor-pointer transition", {
         "bg-brand-primary hover:bg-brand-secondary text-brand-gray-900 font-bold",
       secondary: "bg-gray-200",
       accept:
-        "bg-brand-accept-primary hover:bg-brand-accept-secondary text-white",
-      warn: "bg-brand-warn-primary hover:bg-brand-warn-secondary text-white",
+        "border border-brand-accept-primary bg-white hover:bg-brand-accept-primary hover:text-white text-brand-accept-primary",
+      warn: "border border-brand-warn-primary bg-white hover:bg-brand-warn-primary hover:text-white text-brand-warn-primary",
       action:
-        "bg-brand-action-primary hover:bg-brand-action-secondary text-white",
+        "border border-brand-action-primary bg-white hover:bg-brand-action-primary hover:text-white text-brand-action-primary",
       inactive: "bg-brand-grey-500 text-brand-gray-900 font-bold",
       ghost: "bg-transparent",
     },

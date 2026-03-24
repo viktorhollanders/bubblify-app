@@ -41,7 +41,7 @@ export function CartItemCard({ item }: { item: CartItem }) {
             variant="warn"
             size="round"
             onClick={() => deleteCartItem(item.product)}
-            className="group border-brand-warning-primary bg-red-200 border"
+            className="group border-brand-warning-primary bg-red-200 border hover:bg-brand-warning-primary"
           >
             <Trash
               className="text-brand-warning-primary group-hover:text-white"

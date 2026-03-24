@@ -36,7 +36,7 @@ export default async function BubblesDetails({
           <h3 className="font-bold">{product.price} KR.</h3>
         </div>
 
-        <div className="lg:p-4">
+        <div className="flex justify-center">
           <AddToCartButton item={product} />
         </div>
       </div>

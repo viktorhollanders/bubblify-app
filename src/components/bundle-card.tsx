@@ -5,7 +5,7 @@ import { AddToCartButton } from "./add-to-cart-btn";
 
 export function BundleCard({ bundle }: { bundle: BundleWithProducts }) {
   return (
-    <div className="bg-brand-grey-100 rounded-2xl p-4 border-brand-grey-300 border-2 flex flex-col justify-between w-[250px] m-auto h-full">
+    <div className="bg-brand-grey-100 rounded-2xl p-4 border-brand-grey-300 border-2 flex flex-col justify-between w-62.6 m-auto h-full">
       <h1 className="font-light text-2xl mb-6">{bundle.name}</h1>
 
       <div
@@ -41,7 +41,7 @@ export function BundleCard({ bundle }: { bundle: BundleWithProducts }) {
           </h1>
         ))}
       </div>
-      <div className="flex justify-center">
+      <div className="mt-6 flex justify-center">
         <AddToCartButton item={bundle} />
       </div>
     </div>
